@@ -65,48 +65,48 @@
     Event *event1 = [[Event alloc] init];
     event1.start = [self dateAtDay:1 month:8 year:2015];
     event1.end = [self dateAtDay:2 month:8 year:2015];
-    event1.title = @"Это даты быть не должно";
+    event1.title = @"1";
     
     Event *event2 = [[Event alloc] init];
     event2.start = [self dateAtDay:8 month:8 year:2015];
     event2.end = [self dateAtDay:8 month:8 year:2015];
-    event2.title = @"Дата начала и конца равны";
+    event2.title = @"2";
 
     Event *event3 = [[Event alloc] init];
     event3.start = [self dateAtDay:8 month:8 year:2015];
     event3.end = [self dateAtDay:9 month:8 year:2015];
-    event3.title = @"Дата заканчивается после окончания";
+    event3.title = @"3";
     
     Event *event4 = [[Event alloc] init];
     event4.start = [self dateAtDay:8 month:8 year:2015 hour:10 minutes:0 second:0];
     event4.end = [self dateAtDay:8 month:8 year:2015 hour:19 minutes:0 second:0];
-    event4.title = @"Дата между началом и концом";
+    event4.title = @"4";
     
     Event *event5 = [[Event alloc] init];
     event5.start = [self dateAtDay:7 month:8 year:2015 hour:10 minutes:0 second:0];
     event5.end = [self dateAtDay:9 month:8 year:2015 hour:19 minutes:0 second:0];
-    event5.title = @"Дата начинается раньше начала, заканчивается после";
+    event5.title = @"5";
     
     Event *event6 = [[Event alloc] init];
     event6.start = [self dateAtDay:7 month:8 year:2015 hour:10 minutes:0 second:0];
     event6.end = [self dateAtDay:8 month:8 year:2015 hour:19 minutes:0 second:0];
-    event6.title = @"Дата начинается раньше заканчивается между";
+    event6.title = @"6";
     
     Event *event7 = [[Event alloc] init];
     event7.start = [self dateAtDay:7 month:8 year:2015 hour:10 minutes:0 second:0];
     event7.end = [self dateAtDay:8 month:8 year:2015 hour:23 minutes:59 second:59];
-    event7.title = @"Дата начинается начинается раньше заканчивается между";
+    event7.title = @"7";
     
     Event *event8 = [[Event alloc] init];
     event8.start = [self dateAtDay:8 month:8 year:2015 hour:0 minutes:0 second:0];
     event8.end = [self dateAtDay:9 month:8 year:2015 hour:19 minutes:0 second:0];
-    event8.title = @"Дата начинается вместе с датой начала заканчивается после конца";
+    event8.title = @"8";
     
     
     NSDate *startDate = [self dateAtDay:8 month:8 year:2015];
     NSDate *endDate = [self dateAtDay:8 month:8 year:2015 hour:23 minutes:59 second:59];
     
-        NSPredicate *prStart = [NSPredicate predicateWithFormat:@"start <= %@ AND end >= %@", startDate, startDate];
+    NSPredicate *prStart = [NSPredicate predicateWithFormat:@"start <= %@ AND end >= %@", startDate, startDate];
     NSPredicate *prEnd = [NSPredicate predicateWithFormat:@"start <= %@ AND end >= %@", endDate, endDate];
     NSPredicate *prMiddle = [NSPredicate predicateWithFormat:@"start <= %@ AND end >= %@", startDate, endDate];
     NSPredicate *prOther = [NSPredicate predicateWithFormat:@"start >= %@ AND end <= %@", startDate, endDate];
@@ -126,6 +126,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
 @end

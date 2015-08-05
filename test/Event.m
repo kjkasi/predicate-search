@@ -11,7 +11,9 @@
 @implementation Event
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"title = %@, start = %@, end = %@", self.title, self.start, self.end];
+    //return [NSString stringWithFormat:@"title = %@, start = %@, end = %@", self.title, self.start, self.end];
+    
+    return [NSString stringWithFormat:@"title = %@", self.title];
 }
 
 @end
